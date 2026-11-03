@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# After Vercel assigns your public domain, replace YOUR-VERCEL-DOMAIN below,
+# then remove the leading # so search engines can discover sitemap.xml.
+# Sitemap: https://YOUR-VERCEL-DOMAIN/sitemap.xml
