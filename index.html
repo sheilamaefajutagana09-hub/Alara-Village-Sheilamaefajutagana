@@ -4207,7 +4207,7 @@ window.addEventListener("resize",function(){if(cur>=0)placeComet(n>1?cur/(n-1):0
 if("IntersectionObserver" in window){var viewObserver=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.target!==media)return;inView=entry.isIntersecting&&entry.intersectionRatio>=.25;if(inView)playIfVisible();else v.pause()})},{threshold:[0,.25,.5]});viewObserver.observe(media)}else{inView=true}
 Array.prototype.forEach.call(dt,function(dot,k){dot.addEventListener("click",function(){if(!isFinite(v.duration)||!v.duration)return;v.currentTime=Math.min(v.duration-.05,(starts[k]||0)+.05);playIfVisible()})});
 v.muted=true;v.defaultMuted=true;v.autoplay=false;v.playsInline=true;v.loop=true;v.preload="auto";
-google.script.run.withSuccessHandler(function(r){if(!r||!r.data){console.error("Timeline video was not found in the Drive folder");return}try{var raw=atob(r.data),bytes=new Uint8Array(raw.length);for(var i=0;i<raw.length;i++)bytes[i]=raw.charCodeAt(i);var blob=new Blob([bytes],{type:r.type||"video/mp4"});videoObjectUrl=URL.createObjectURL(blob);v.src=videoObjectUrl;v.load();sync();playIfVisible()}catch(e){console.error("Could not prepare timeline video",e)}}).withFailureHandler(function(e){console.error("Could not load timeline video",e)}).getVideo();
+v.src="/alara_day_to_night_enhanced_trimmed-COMPRESS-COMPRESS%20%281%29.mp4";v.load();sync();playIfVisible();
 set(0);
 window.addEventListener("resize",function(){if(cur>=0)placePin(cur)});
 })();</script>
