@@ -156,11 +156,11 @@ footer{padding:30px 0 40px;font-size:12px;text-align:center;color:#5d7a60}
 .mi .q{font-size:12px;font-style:italic;margin:0 0 18px}
 .mi .cta{display:block;text-align:center;padding:14px;font-size:11px;letter-spacing:.1em}
 
-.tl{--n:6}
-.tl-track{padding:44px 0 72px}
-.tl-stick{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;gap:20px;align-items:center}
+	.tl{--n:6}
+	.tl-track{padding:44px 0 72px}
+	.tl-stick{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;gap:20px;align-items:center}
 .tl-rail{display:none}
-.tl-media{cursor:default;position:relative;width:100%;max-width:660px;aspect-ratio:16/9;max-height:100%;justify-self:center;overflow:hidden;background:#e8ede5}
+	.tl-media{cursor:default;position:relative;width:100%;max-width:760px;aspect-ratio:16/9;max-height:100%;justify-self:center;overflow:hidden;background:#e8ede5}
 .tl-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0;background:#e8ede5}
 .tl-media .tl-badge{pointer-events:none}
 .tl-badge{position:absolute;left:16px;top:16px;bottom:auto;z-index:2;background:var(--g);color:#e6c880;border:1px solid rgba(230,200,128,.55);font:500 11px "Jost",sans-serif;letter-spacing:.26em;padding:10px 18px}
@@ -172,16 +172,16 @@ footer{padding:30px 0 40px;font-size:12px;text-align:center;color:#5d7a60}
 .tl-text h3{font-size:clamp(28px,3.4vw,42px);font-weight:400;margin:8px 0 14px}
 .tl-text p{margin:0;max-width:24em}
 @media(min-width:900px){
-.tl-stick{grid-template-columns:130px minmax(0,560px) minmax(0,1fr);grid-template-rows:none;gap:46px;height:560px}
-.tl-media{max-width:600px}
+.tl-stick{grid-template-columns:130px minmax(0,min(760px,calc(100% - 304px))) minmax(125px,.55fr);grid-template-rows:none;gap:24px;height:560px}
+.tl-media{max-width:760px}
 .tl-text{align-self:center}
 .tl-rail{display:block;position:relative;height:100%}
-.tl-rail>svg{position:absolute;left:100px;width:26px;height:26px;margin-left:-13px;stroke:var(--g);fill:none;stroke-width:1.5;stroke-linecap:round}
+.tl-rail>svg{position:absolute;left:100px;z-index:5;width:26px;height:26px;margin-left:-13px;stroke:var(--g);fill:none;stroke-width:1.5;stroke-linecap:round}
 .tl-rail .su{top:0}.tl-rail .mo{bottom:0}
-.tl-line{position:absolute;left:100px;top:46px;bottom:46px;width:1px;background:#c6d2c4}
+.tl-line{position:absolute;left:100px;top:46px;bottom:46px;z-index:0;width:1px;background:#c6d2c4}
 .tl-line::after{content:"";position:absolute;left:0;top:0;width:1px;height:calc(var(--p,0)*100%);background:var(--g);transition:height .7s ease}
-.tl-dots{position:absolute;left:100px;top:46px;bottom:46px;width:0;display:flex;flex-direction:column;justify-content:space-between;align-items:center}
-.tl-dots i{cursor:pointer;position:relative;display:block;flex:none;width:7px;height:7px;border-radius:50%;background:#a9bba6;transition:all .45s ease}
+.tl-dots{position:absolute;left:100px;top:46px;bottom:46px;z-index:2;width:0;display:flex;flex-direction:column;justify-content:space-between;align-items:center}
+.tl-dots i{cursor:pointer;position:relative;display:block;flex:none;width:7px;height:7px;border:1px solid #a9823d;border-radius:50%;background:#f7f2e5;box-shadow:0 0 0 2px rgba(255,255,255,.9);transition:all .45s ease}
 .tl-dots i.on{width:13px;height:13px;background:var(--g);box-shadow:0 0 0 6px rgba(45,87,51,.16);animation:pulse 2.4s infinite}
 .tl-dots i::before{content:"";position:absolute;inset:-12px -44px}
 .tl-dots b{pointer-events:none;position:absolute;right:28px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:500;letter-spacing:.14em;white-space:nowrap;color:var(--g);opacity:0;transition:opacity .4s}
@@ -505,7 +505,7 @@ header .brand small{font-size:8px;letter-spacing:.16em}
 @media(prefers-reduced-motion:reduce){.tl-dots i.on{animation:none!important}}
 /* Gentle, non-bouncing travel of the gold marker along the timeline */
 @media(min-width:900px){
-.tl-pin{display:block;position:absolute;left:100px;top:46px;width:16px;height:16px;margin:-8px 0 0 -8px;z-index:4;pointer-events:none;border:2px solid #fffdf5;border-radius:50%;outline:1px solid #9b7537;background:radial-gradient(circle at 34% 28%,#f6e8b8,#bd984e 67%,#967038);box-shadow:0 3px 10px rgba(45,67,39,.24),0 0 0 4px rgba(201,161,82,.12);transition:top 1.15s cubic-bezier(.22,.61,.36,1);will-change:top}
+.tl-pin{display:block;position:absolute;left:100px;top:46px;width:16px;height:16px;margin:-8px 0 0 -8px;z-index:1;pointer-events:none;border:2px solid #fffdf5;border-radius:50%;outline:1px solid #9b7537;background:radial-gradient(circle at 34% 28%,#f6e8b8,#bd984e 67%,#967038);box-shadow:0 3px 10px rgba(45,67,39,.24),0 0 0 4px rgba(201,161,82,.12);transition:top 1.15s cubic-bezier(.22,.61,.36,1);will-change:top}
 .tl-dots i.on{width:10px;height:10px;animation:none;box-shadow:0 0 0 1px #a77e35;background:#fff9e8}
 .tl-line::after{transition:height 1.15s cubic-bezier(.22,.61,.36,1)}
 }
@@ -624,13 +624,13 @@ body.modal-open{overflow:hidden}
 /* Model finance guidance */
 .finance-guide{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:16px 0;margin:18px 0 4px;border-top:1px solid #e3e0cf;border-bottom:1px solid #e3e0cf}
 .finance-guide small{display:block;margin-bottom:5px;color:#7b8f7f;font:500 8px/1.35 "Jost",sans-serif;letter-spacing:.14em;text-transform:uppercase}
-.finance-guide b{display:block;color:var(--g);font:500 22px/1 "Cormorant Garamond",Georgia,serif;white-space:nowrap}
+.finance-guide b{display:block;color:#245232;font-family:"Jost",sans-serif;font-size:22px;font-weight:500;line-height:1.2;letter-spacing:.045em;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;white-space:nowrap}
 .finance-guide span{display:block;margin-top:4px;color:#8a7a56;font:400 10px "Jost",sans-serif}
 .reserve-finance{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px 0 2px;margin-top:8px;border-top:1px solid #e6dcc0}
 .reserve-finance small{display:block;margin-bottom:4px;color:#8d7b5a;font:500 8px/1.3 "Jost",sans-serif;letter-spacing:.13em;text-transform:uppercase}
 .reserve-finance b{display:block;color:var(--g);font:500 20px/1 "Cormorant Garamond",Georgia,serif;white-space:nowrap}
 .reserve-finance span{display:block;margin-top:3px;color:#9a8b73;font:400 9px "Jost",sans-serif}
-@media(max-width:460px){.finance-guide{gap:10px}.finance-guide b{font-size:19px}.reserve-finance b{font-size:18px}}
+@media(max-width:460px){.finance-guide{gap:10px}.finance-guide b{font-size:18px}.reserve-finance b{font-size:18px}}
 
 
 /* Drive-sourced logo in the reservation visual */
@@ -3924,6 +3924,11 @@ footer.site-footer::after{content:"A";position:absolute;z-index:-1;right:2.5%;bo
   .location-map.rv iframe{opacity:1!important;visibility:visible!important;transform:none!important;filter:saturate(.86) contrast(1)!important}
 }
 .around-feature.is-king-solomon .around-image-wrap img{object-position:center 65%!important}
+@media(min-width:901px){
+  .around-feature.is-king-solomon{grid-template-rows:auto auto;min-height:0;align-self:start}
+  .around-feature.is-king-solomon .around-image-wrap{aspect-ratio:16/10;min-height:0;max-height:400px}
+  .around-feature.is-king-solomon #around-image{min-height:0}
+}
 /* Reserve your home: clear, comfortably spaced finance numbers */
 .reserve-finance b{font-family:"Jost",sans-serif!important;font-size:22px!important;font-weight:500!important;line-height:1.2!important;letter-spacing:.045em;font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;white-space:nowrap}
 .reserve-finance{column-gap:18px!important;row-gap:16px!important}
